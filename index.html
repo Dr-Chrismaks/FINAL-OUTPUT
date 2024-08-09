@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP</title>
+    <link rel="Stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Signup</h1>
+        <p id="error-message"></p>
+        <form id="SignupForm">
+    <div>
+            <label for="Firstname-input">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E124A"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+            </label>
+            <input type="text" name="Firstname" id="Firstname-input" placeholder="Firstname">
+        </div>
+        <div>
+            <label for="Email-input">
+            <span>@</span>
+            </label>
+            <input type="email" name="Email" id="Email-input" placeholder="Email">
+        </div>
+        <div>
+            <label for="Password-input">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#992B15"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
+            </label>
+            <input type="password" name="Password" id="Password-input" placeholder="Password">   
+        </div>
+        <div>
+            <button type="button" id="Generate-otp">Generate OTP</button>
+            <div class="container OTP-CONTAINER">
+            <label for="Enter-otp-input">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#1E124A"><path d="M440-200h80v-120h120v-80H520v-120h-80v120H320v80h120v120ZM240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm120-560h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
+            </label>
+            <input inputmode="numeric" name="Enter-otp" id="Enter-otp-input" placeholder="Enter OTP" required aria-label="Enter OTP">
+        </div>
+    </div>
+    <div>
+        <button type="Submit">Signup</button>
+        </div>
+    </form>
+    <p>Already have an Account? <a href="LOGIN.html">Login</a></p>
+   </div>
+   <script src="validation.js"></script>
+ <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('SignupForm');
+            const generateOTPButton = document.getElementById('Generate-otp');
+            const errorMessage = document.getElementById('error-message');
+
+            let generatedOTP = '';
+
+            generateOTPButton.addEventListener('click', function() {
+                const email = document.getElementById('Email-input').value;
+                if (!email) {
+                    errorMessage.textContent = 'Please enter an email address';
+                    return;
+                }
+
+                generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+                console.log(`OTP for ${email}: ${generatedOTP}`);
+                alert(`OTP sent to ${email}. For this demo, the OTP is: ${generatedOTP}`);
+            });
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const firstname = document.getElementById('Firstname-input').value;
+                const email = document.getElementById('Email-input').value;
+                const password = document.getElementById('Password-input').value;
+                const enteredOTP = document.getElementById('Enter-otp-input').value;
+
+                if (!firstname || !email || !password || !enteredOTP) {
+                    errorMessage.textContent = 'Please fill in all fields';
+                    return;
+                }
+
+                if (enteredOTP !== generatedOTP) {
+                    errorMessage.textContent = 'Invalid OTP';
+                    return;
+                }
+
+                // Save user data to local storage
+                const userData = {
+                    firstname: firstname,
+                    email: email,
+                    password: password  // Note: In a real app, never store passwords in plain text
+                };
+                localStorage.setItem('userData', JSON.stringify(userData));
+
+                alert('Signup successful!');
+                window.location.href = 'first-page.html';  // Redirect to first page
+                <p>Already have an Account? <a href="login.html">Login</a></p>
+            });
+        });
+    </script> -->
+</body>
+</html>
